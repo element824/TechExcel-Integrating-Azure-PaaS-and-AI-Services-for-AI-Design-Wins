@@ -46,7 +46,9 @@ def main():
             if query:
                 # Vectorize the query text.
                 # Exercise 3 Task 3 TODO #4: Get the vectorized query text by calling handle_query_vectorization.
+                st.write("Converting to Vector Started")
                 query_vector = handle_query_vectorization(query)
+                st.write("Converting to Vector finsihed")
                 # Perform the vector search.
                 # Exercise 3 Task 3 TODO #5: Get the vector search results by calling handle_vector_search.
                 vector_search_results = handle_vector_search(query_vector, max_results, minimum_similarity_score)
