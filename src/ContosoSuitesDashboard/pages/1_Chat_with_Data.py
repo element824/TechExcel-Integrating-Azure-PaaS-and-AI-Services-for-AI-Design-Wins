@@ -4,7 +4,7 @@ import openai
 st.set_page_config(layout="wide")
 
 def create_chat_completion(messages):
-    """Create and return a new chat completion request. Key assumptions:
+    """Create and return a new chat completion request KN. Key assumptions:
     - The Azure OpenAI endpoint, key, and deployment name are stored in Streamlit secrets."""
 
     aoai_endpoint = st.secrets["aoai"]["endpoint"]
