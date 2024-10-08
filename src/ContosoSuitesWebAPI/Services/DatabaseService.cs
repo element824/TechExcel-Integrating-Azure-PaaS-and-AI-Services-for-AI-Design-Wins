@@ -66,6 +66,8 @@ public class DatabaseService : IDatabaseService
         return bookings;
     }
 
+    [KernelFunction]
+    [Description("Get all bookings for a single hotel and Minimum Date.")]
     public async Task<IEnumerable<Booking>> GetBookingsByHotelAndMinimumDate(int hotelId, DateTime dt)
     {
         var sql = "SELECT BookingID, CustomerID, HotelID, StayBeginDate, StayEndDate, NumberOfGuests FROM dbo.Booking WHERE HotelID = @HotelID AND StayBeginDate >= @StayBeginDate";
@@ -95,6 +97,8 @@ public class DatabaseService : IDatabaseService
         return bookings;
     }
 
+    [KernelFunction]
+    [Description("Get all bookings which do not have hotel rooms.")]
     public async Task<IEnumerable<Booking>> GetBookingsMissingHotelRooms()    
     {
         var sql = """
@@ -138,6 +142,8 @@ public class DatabaseService : IDatabaseService
         return bookings;
     }
 
+    [KernelFunction]
+    [Description("Get all bookings which includes multiple hotel rooms.")]
     public async Task<IEnumerable<Booking>> GetBookingsWithMultipleHotelRooms()
     {
         var sql = """
